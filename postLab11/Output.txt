@@ -1,0 +1,135 @@
+Please enter the name of the file of nucleotides
+Cannot find a file called "Hello.txt", please try again
+
+Please enter the name of the file of nucleotides
+Cannot find a file called "This file name contains 80 characters Did you handle the reading marker properly", please try again
+
+Please enter the name of the file of nucleotides
+Cannot find a file called "", please try again
+
+Please enter the name of the file of nucleotides
+Cannot find a file called "This is the third bad file name The next one is OK", please try again
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+You must enter at least one valid nucleotide
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+21 lines processed.
+The pattern CGG was found 17 times.
+
+----------------------------------------------------------
+
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+0 lines processed.
+The pattern CGG was found 0 times.
+
+----------------------------------------------------------
+
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+0 lines processed.
+The pattern CGG was found 0 times.
+
+----------------------------------------------------------
+
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+0 lines processed.
+The pattern CGG was found 0 times.
+
+----------------------------------------------------------
+
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+205 lines processed.
+The pattern CGG was found 4017 times.
+
+----------------------------------------------------------
+
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+205 lines processed.
+The pattern CGGCGG was found 55 times.
+
+----------------------------------------------------------
+
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+205 lines processed.
+The pattern CGGCGGCGG was found 1 times.
+
+----------------------------------------------------------
+
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+205 lines processed.
+The pattern CGGCGGCGGCGG was found 0 times.
+
+----------------------------------------------------------
+
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+205 lines processed.
+The pattern TTGTGGAGGGCGGCTCGGCTCACCTTGAATAGATCTATACCCATTACAGACTCTTGCATTATGTGGACCGGTCGGCATGATGAATGGC was found 1 times.
+
+----------------------------------------------------------
+
+
+Please enter the name of the file of nucleotides
+
+Please enter a pattern of nucleotides on a single line
+
+
+
+205 lines processed.
+The pattern G was found 64482 times.
+
+----------------------------------------------------------
+
+

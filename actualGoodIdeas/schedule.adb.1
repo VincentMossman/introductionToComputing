@@ -1,0 +1,22 @@
+with Ada.Text_IO;
+
+procedure Schedule is
+
+         Assignment_ID   : Natural;
+         Class_Name      : String (1 .. 30);
+         Class_Length    : Natural (0 .. 30);
+         Date_Assigned   : Day_Rec;
+         Date_Due        : Day_Rec;
+
+   type Day_Schedule is
+      record
+         Class_Assignment : Class_Rec;
+         Work_Assignment  : Work_Rec;
+         Misc_Assignment  : Misc_Rec;
+   end record;
+
+begin
+
+
+
+end Schedule;

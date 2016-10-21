@@ -1,0 +1,61 @@
+V "GNAT Lib v2013"
+M P W=b
+A -gnatwu
+A -gnat05
+P ZX
+
+RN
+RV NO_IO
+RV NO_RECURSION
+
+U gay%b			gay.adb			7b36a5f8 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-inteio.ads		20130417131020 f64b89a4
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tiinio.ads		20130417131022 aa04e5d6
+D a-unccon.ads		20130417131022 f9eb8f06
+D gay.adb		20140331015616 b510d988
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 11|1r6 2r6 22r4
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[9|45] 11|2w10 22r8
+X 8 a-textio.ads
+49K13*Text_IO 471e16 11|1w10
+X 9 a-tiinio.ads
+65U14*Put 11|22s24[4|18]
+66i7 Item{integer} 11|22r29[4|18]
+X 11 gay.adb
+4U11*gay 4b11 23t4
+6V13 Puzzle{integer} 6b13 6>21 7>21 15s27 18l8 18t14 22s37
+6i21 Base{natural} 10r10 12r13 15r20 15r35
+7i21 Limit{natural} 10r17 12r20 15r45
+8i7 Result{integer} 11m10 13m10 15m10 17r14
+

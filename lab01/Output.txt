@@ -1,0 +1,3 @@
+Enter employee number: Enter pay rate: Enter hours worked: Enter employee number: Enter pay rate: Enter hours worked: Enter employee number: Enter pay rate: Enter hours worked: Enter employee number: Enter pay rate: Enter hours worked: Enter employee number: Enter pay rate: Enter hours worked: Enter employee number: 
+
+Total payroll is $1955.39

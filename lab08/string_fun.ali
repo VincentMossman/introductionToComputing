@@ -1,0 +1,127 @@
+V "GNAT Lib v2013"
+M P W=b
+A -fstack-check=specific
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -gnatwc
+A -gnatwd
+A -gnatwf
+A -gnatwg
+A -gnatwk
+A -gnatwm
+A -gnatwr
+A -gnatwu
+A -gnatwv
+A -gnatww
+A -gnatwz
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatye
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatyM110
+A -gnatyr
+A -gnatyt
+A -gnatyx
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+
+RN
+RV NO_ENUMERATION_MAPS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV SPARK
+
+U string_fun%b		string_fun.adb		3e70f1a0 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W ada.text_io.enumeration_io%s
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-charac.ads		20130417131018 2d3ec45b
+D a-chahan.ads		20130417131018 1d381dcd
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tienau.ads		20130417131022 6a9c157b
+D a-tienio.ads		20130417131022 fc618ae6
+D a-tienio.adb		20130417131022 c9e6b5af
+D a-unccon.ads		20130417131022 f9eb8f06
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D string_fun.adb	20131017155942 1b2519b9
+D system.ads		20130417131036 5fc8ae56
+D s-conca2.ads		20130417131028 fbd0f2fc
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-imenne.ads		20130417131030 8707cbf0
+D s-imgint.ads		20130417131030 02dbe0c2
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-valenu.ads		20130417131034 bb1a4295
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 16|1r6 2r6 2r37 7r29 15r7 25r7 26r7 28r7 31r7 33r7
+X 2 a-charac.ads
+16K13*Characters 18e19 16|2r10 2r41
+X 3 a-chahan.ads
+36K24*Handling 150e28 16|2w21 2r52
+63V13*To_Upper{character} 16|14s20
+66V13*To_Lower{string} 16|13s16
+X 9 a-textio.ads
+49K13*Text_IO 471e16 16|1w10 7r33 15r11 25r11 26r11 28r11 31r11 33r11
+166U14*New_Line 16|26s19 33s19
+242U14*Put 16|15s19 25s19 28s19 31s19
+X 11 a-tienio.ads
+44E9 Enum 16|7r57
+46k21*Enumeration_IO 75e31 16|7r41
+52U14 Get 16|29s17[7]
+X 16 string_fun.adb
+3U11*String_Fun 3b11 37l5 37t15
+5E9 Choice_Type 5e47 7r65 10r29 11r25 19r13
+5n25 Rock{5E9} 19r28
+5n31 Paper{5E9}
+5n38 Scissors{5E9}
+7K12 Choice_IO[11|46] 29r7
+10U14 Put 10b14 10>19 16l8 16t11 32s7
+10e19 Item{5E9} 11r44
+11a7 Value{string} 13m7 13r26 14m7 14r30 15r24
+19e4 Choice{5E9} 29m22 32r12
+20i4 Count{integer} 23m4 25r60 35m7 35r16
+

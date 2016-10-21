@@ -1,0 +1,123 @@
+V "GNAT Lib v2013"
+A -fstack-check=specific
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -gnatwc
+A -gnatwd
+A -gnatwf
+A -gnatwg
+A -gnatwk
+A -gnatwm
+A -gnatwr
+A -gnatwu
+A -gnatwv
+A -gnatww
+A -gnatwz
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatye
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatyM110
+A -gnatyr
+A -gnatyt
+A -gnatyx
+A -g
+P ZX
+
+RN
+RV NO_ENUMERATION_MAPS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U cards.card_io%b	cards-card_io.adb	0d956005 OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W ada.text_io.enumeration_io%s
+W cards%s		cards.adb		cards.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+
+U cards.card_io%s	cards-card_io.ads	a76fc724 EE NE OO PK
+W cards%s		cards.adb		cards.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tienau.ads		20130417131022 6a9c157b
+D a-tienio.ads		20130417131022 fc618ae6
+D a-tienio.adb		20130417131022 c9e6b5af
+D a-unccon.ads		20130417131022 f9eb8f06
+D cards.ads		20130426171614 05714428
+D cards-card_io.ads	20131212163026 a21e830c
+D cards-card_io.adb	20131212165126 97e616dd
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-imenne.ads		20130417131030 8707cbf0
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-valenu.ads		20130417131034 bb1a4295
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 14|1r6 4r28 5r28 11r30 13r7 15r28
+X 7 a-textio.ads
+49K13*Text_IO 471e16 14|1w10 4r32 5r32 11r34 13r11 15r32
+73I12*Field{integer}
+80n22*Lower_Case{80E9} 14|11r42 15r40
+242U14*Put 14|13s19
+X 9 a-tienio.ads
+46k21*Enumeration_IO 75e31 14|4r40 5r40
+52U14*Get 14|21s16[5] 22s15[4]
+52e19 Item{12|7E9} 14|21r21[5] 22r20[4]
+60U14*Put 14|10s16[5] 14s15[4]
+61e7 Item{12|7E9} 14|10r21[5] 14r20[4]
+62i7 Width{7|73I12} 14|12r21[5]
+63e7 Set{7|80E9} 14|11r21[5] 15r20[4]
+X 12 cards.ads
+1K9*Cards 36e10 13|1r9 9r5 14|2r14 26r5
+6E9*Suit_Type 6e56 14|4r56
+7E9*Value_Type 8e47 14|5r56
+10R9*Playing_Card 14e17 13|3r29 6r30 14|8r29 19r30
+12e10*Suit{6E9} 14|14r33 22m33
+13e10*Value{7E9} 14|10r35 21m34
+X 13 cards-card_io.ads
+1K15*Card_IO 12|1k9 13|9l11 9e18 14|2b20 26l11 26t18
+3U14*Put 3>19 14|8b14 16l8 16t11
+3r19 Card{12|10R9} 14|8b19 10r30 14r28
+6U14*Get 6<19 14|19b14 24l8 24t11
+6r19 Card{12|10R9} 14|19b19 21m29 21r29 22m28 22r28
+X 14 cards-card_io.adb
+4K12 Suit_IO[9|46] 14r7 22r7
+5K12 Value_IO[9|46] 10r7 21r7
+

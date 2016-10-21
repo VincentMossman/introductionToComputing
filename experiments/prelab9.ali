@@ -1,0 +1,63 @@
+V "GNAT Lib v2013"
+M P W=b
+A -gnatwu
+A -gnat05
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_IO
+RV SPARK
+
+U prelab9%b		prelab9.adb		b4036d2b NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-unccon.ads		20130417131022 f9eb8f06
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D prelab9.adb		20131022230842 8c6e98ff
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 11|1r6 31r4 32r4 34r4 35r4
+X 7 a-textio.ads
+49K13*Text_IO 471e16 11|1w10 31r8 32r8 34r8 35r8
+166U14*New_Line 11|32s16 35s16
+242U14*Put 11|31s16 34s16
+X 11 prelab9.adb
+2U11*Prelab9 2b11 36l5 36t12
+4N4 Length 5r39 16r37 17r18
+5A12 Fun_String{string}<integer> 7r34 27r10
+7U14 Mess 7b14 7=20 25l8 25t12 33s4
+7a20 Item{5A12} 18r13 18r28 19r19 20m13 20r29 21m13 33r10
+8e7 Ch{character} 19m13 21r28
+9i7 First{natural} 13m7 16r29 17r27 18r19 19r25 20r19 23m10 23r19
+10i7 Last{natural} 17m10 18r34 20r35 21r19
+14l7 Fun_Loop 16r15 24l16 24e24
+27a4 Fun{5A12} 30m4 31r21 33m18 33r18 34r21
+

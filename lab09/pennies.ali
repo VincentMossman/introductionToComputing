@@ -1,0 +1,103 @@
+V "GNAT Lib v2013"
+M P W=b
+A -fstack-check=specific
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -gnatwc
+A -gnatwd
+A -gnatwf
+A -gnatwg
+A -gnatwk
+A -gnatwm
+A -gnatwr
+A -gnatwu
+A -gnatwv
+A -gnatww
+A -gnatwz
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatye
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatyM110
+A -gnatyr
+A -gnatyt
+A -gnatyx
+A -g
+P ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FIXED_POINT
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLICIT_ALIASING
+RV SPARK
+
+U pennies%b		pennies.adb		87c8a6d0 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.decimal_aux%s  a-tideau.adb	a-tideau.ali
+W ada.text_io.decimal_io%s
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tideau.ads		20130417131022 d7d2561e
+D a-tideio.ads		20130417131022 1e9d1f0b
+D a-tideio.adb		20130417131022 e8a277df
+D a-unccon.ads		20130417131022 f9eb8f06
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D pennies.adb		20131024151224 bfa55304
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 14|1r6 8r30 21r4
+X 7 a-textio.ads
+49K13*Text_IO 471e16 14|1w10 8r34 21r8
+73I12*Field{integer}
+166U14*New_Line 14|21s16
+X 9 a-tideio.ads
+45k21*Decimal_IO 88e27 14|8r42
+67U14 Put 14|17s15[8]
+68d7 Item{14|4D9} 14|17r20[8]
+69i7 Fore{7|73I12} 14|18r27[8]
+70i7 Aft{7|73I12} 14|19r27[8]
+71i7 Exp{7|73I12} 14|20r27[8]
+X 14 pennies.adb
+2U11*Pennies 2b11 23l5 23t12
+4D9 Decimal 5r29 6r20 8r54
+5d4 Three_Pennies{4D9} 14r40
+6d4 Total_Dollars{4D9} 12m4 14m7 14r24 17r28
+8K12 Decimal_IO[9|45] 17r4
+13i8 Count{integer}
+

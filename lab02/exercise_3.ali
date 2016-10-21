@@ -1,0 +1,97 @@
+V "GNAT Lib v2013"
+M P W=b
+A -fstack-check=specific
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -gnatwc
+A -gnatwd
+A -gnatwf
+A -gnatwg
+A -gnatwk
+A -gnatwm
+A -gnatwr
+A -gnatwu
+A -gnatwv
+A -gnatww
+A -gnatwz
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatye
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatyM110
+A -gnatyr
+A -gnatyt
+A -gnatyx
+A -g
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+
+U exercise_3%b		exercise_3.adb		229f8c7d NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-flteio.ads		20130417131020 e18a47a0
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tiflio.ads		20130417131022 56fbda09
+D a-unccon.ads		20130417131022 f9eb8f06
+D exercise_3.adb	20130905153842 fb783e09
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 11|1r6 2r6 25r4 26r4 30r4 31r4 32r4 36r4 37r4 38r4 42r4
+X 4 a-flteio.ads
+20K13*Float_Text_IO[9|45] 11|2w10 26r8 32r8 38r8
+X 8 a-textio.ads
+49K13*Text_IO 471e16 11|1w10 25r8 30r8 31r8 36r8 37r8 42r8
+73I12*Field{integer}
+166U14*New_Line 11|30s16 36s16 42s16
+242U14*Put 11|25s16 31s16 37s16
+242s19 Item{string} 11|25r21 31r21 37r21
+X 9 a-tiflio.ads
+67U14*Put 11|26s22[4|20] 32s22[4|20] 38s22[4|20]
+68f7 Item{float} 11|26r27[4|20] 32r27[4|20] 38r27[4|20]
+69i7 Fore{8|73I12} 11|27r27[4|20] 33r27[4|20] 39r27[4|20]
+70i7 Aft{8|73I12} 11|28r27[4|20] 34r27[4|20] 40r27[4|20]
+71i7 Exp{8|73I12} 11|29r27[4|20] 35r27[4|20] 41r27[4|20]
+X 11 exercise_3.adb
+4U11*Exercise_3 4b11 44l5 44t15
+12f4 Debt{float} 22r33 24r17
+13f4 Payment{float} 23r17 26r35
+14f4 Interest_Rate{float} 22r17
+17f4 Charge{float} 22m4 23r27 32r35
+18f4 Reduction{float} 23m4 24r24
+19f4 Remaining{float} 24m4 38r35
+

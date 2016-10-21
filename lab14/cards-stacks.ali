@@ -1,0 +1,176 @@
+V "GNAT Lib v2013"
+A -fstack-check=specific
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -gnatwc
+A -gnatwd
+A -gnatwf
+A -gnatwg
+A -gnatwk
+A -gnatwm
+A -gnatwr
+A -gnatwu
+A -gnatwv
+A -gnatww
+A -gnatwz
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatye
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatyM110
+A -gnatyr
+A -gnatyt
+A -gnatyx
+A -g
+P SS ZX
+
+RN
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U cards.stacks%b	cards-stacks.adb	e86ccc0f NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.discrete_random%s
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W cards%s		cards.adb		cards.ali
+W cards.card_io%s	cards-card_io.adb	cards-card_io.ali
+W interfaces%s		interfac.ads		interfac.ali
+Z system%s		system.ads		system.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
+
+U cards.stacks%s	cards-stacks.ads	2ccaad7f EE OO PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W cards%s		cards.adb		cards.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-numeri.ads		20130417131020 bb51c45a
+D a-nudira.ads		20130417131020 2fef2912
+D a-nudira.adb		20130417131020 e57ce22b
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-unccon.ads		20130417131022 f9eb8f06
+D cards.ads		20130426171614 05714428
+D cards-card_io.ads	20131212163026 a21e830c
+D cards-stacks.ads	20130426150726 29bbe957
+D cards-stacks.adb	20131212162634 744b7a92
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-imguns.ads		20130417131030 9ff43cf7
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-rannum.ads		20130417131032 5eb33f0a
+D s-rannum.adb		20130417131032 34372cc7
+D s-ransee.ads		20130417131032 01a57b33
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-valuns.ads		20130417131034 10a8ed3b
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 15|1r6 2r6 44r36 114r10
+X 5 a-numeri.ads
+16K13*Numerics 32e17 15|1r10 44r40
+X 6 a-nudira.ads
+44k22*Discrete_Random 73e33 15|1w19 44r49
+48R9 Generator 15|45r35[44]
+50V13 Random{integer} 15|71s38[44]
+53U14 Reset<27|91p14> 15|61s20[44]
+53r21 Gen{48R9[15|44]} 15|61r27[44]
+X 7 a-nudira.adb
+51V16 Random[27|74]{integer} 28|390b13[15|44]
+X 10 a-textio.ads
+49K13*Text_IO 471e16 15|2w10 114r14
+166U14*New_Line 15|114s22
+X 12 cards.ads
+1K9*Cards 36e10 14|1r9 64r5 15|3r6 4r14 113r10 119r5
+6E9*Suit_Type 6e56 15|14r19
+7E9*Value_Type 8e47 15|17r23
+10R9*Playing_Card 14e17 14|30r46 34r48 53r52 15|48r38 49r38 50r17 84r45 96r47
+X 13 cards-card_io.ads
+1K15*Card_IO 9e18 15|3w12 113r16
+3U14*Put 15|113s24
+X 14 cards-stacks.ads
+1K15*Stacks 12|1k9 14|64l11 64e17 15|4b20 119l11 119t17
+4R9*Stack 15r35 18r40 21r33 24r40 29r46 35r48 39r42 58c9 62e17 15|7r35 27r40
+. 33r33 39r40 83r46 97r48 109r42
+15U14*Create 15<22 15|7b14 24l8 24t14
+15r22 A_Deck{4R9} 15|7b22 19m13 22m7
+18U14*Destroy 18=23 15|27b14 30l8 30t15
+18r23 A_Stack{4R9} 15|27b23 29m7
+21V13*Empty{boolean} 21>20 15|33b13 36l8 36t13
+21r20 A_Stack{4R9} 15|33b20 35r14
+24U14*Shuffle 24=23 25>23 15|39b14 80l8 80t15
+24r23 A_Stack{4R9} 15|39b23 43r58 68r28 75m28 75r28 76m28 76r28
+25i23 Times{positive} 15|40b23 65r25
+29U14*Take_Top_Card 29=29 30<29 15|83b14 93l8 93t21
+29r29 A_Stack{4R9} 15|83b29 86r10 90r20 90r35 91m10 91r25
+30r29 A_Card{12|10R9} 15|84b29 90m10
+34U14*Put_Card_On_Top 34>31 35=31 15|96b14 106l8 106t23
+34r31 A_Card{12|10R9} 15|96b31 104r41
+35r31 A_Stack{4R9} 15|97b31 99r10 103m10 103r25 104m10 104r25
+39U14*Display_Stack 39>29 15|109b14 116l8 116t21
+39r29 A_Stack{4R9} 15|109b29 112r33 113r29
+45X4*Empty_Stack 15|87r16
+46X4*Full_Stack 15|100r16
+53A9 Card_Array(12|10R9)<integer> 57r26
+55I12 Count{integer} 56r30 60r18
+56I12 Positive_Count{55I12} 57r38 15|43r32 57r18
+57A12 Deck_Array{53A9}<integer> 61r18 15|22r21 99r24
+60i10*Top{55I12} 15|22m14 29m15 35r22 43r66 68r36 86r18 90r43 91m18 91r33
+. 99r18 103m18 103r33 104r33 112r41
+61a10*Cards{57A12} 15|19m20 75m36 76m36 90r28 104m18 113r37
+X 15 cards-stacks.adb
+8i7 Index{natural} 10m7 18m13 18r22 19r27
+14e11 Suit{12|6E9} 19r38
+17e14 Value{12|7E9} 19r44
+43I15 Shuffle_Range{14|56I12} 44r66
+44K15 Random_Index[6|44] 45r22 61r7 71r25
+45r7 My_Generator{6|48R9[44]} 61r34 71r46
+48U17 Swap 48b17 48=23 49=23 55l11 55t15 75s13
+48r23 Left{12|10R9} 52r19 53m10 75r19
+49r23 Right{12|10R9} 53r19 54m10 76r19
+50r10 Temp{12|10R9} 52m10 54r19
+57i7 Position{14|56I12} 71m13 76r43
+65i11 Count{integer}
+68i14 Index{integer} 75r43
+112i11 Index{integer} 113r44
+X 16 interfac.ads
+61M9*Unsigned_32
+64M9*Unsigned_64
+X 27 s-rannum.ads
+66V13*Random{16|61M9} 28|219i21
+67V13*Random{16|64M9} 28|219i21
+

@@ -1,0 +1,302 @@
+
+GNAT GPL 2013 (20130314)
+Copyright 1992-2013, Free Software Foundation, Inc.
+
+
+Checking: assign11.adb (source file time stamp: 2013-11-22 16:04:12)
+
+     1. with Ada.Text_IO;
+     2. with Ada.Integer_Text_IO;
+     3. with Ada.IO_Exceptions;
+     4. procedure Assign11 is
+     5.
+     6.    -- Author: Vincent T. Mossman
+     7.    -- Date:   November 2013
+     8.    --
+     9.    -- This program determines number of user defined nucleotide patterns in a
+    10.    --  text file containing nucleotides
+    11.    --
+    12.    -- Input from keyboard
+    13.    --   Name of data file containing the lines of a DNA sequence
+    14.    --   A DNA sequence (pattern) to search for in the file
+    15.    --
+    16.    -- Input from file
+    17.    --   Lines of nucleotides
+    18.    --
+    19.    -- Output to screen
+    20.    --   Prompts
+    21.    --   Error message for missing file
+    22.    --   Error message for no nucleotides in the search pattern
+    23.    --   Number of lines in the data file
+    24.    --   Pattern entered by user
+    25.    --   Number of times pattern is found in the data file
+    26.    --
+    27.    -- Assumptions
+    28.    --   The pattern contains at least one nucldotide code and no more than
+    29.    --    10,000 nucleotide codes
+    30.    --   The name of the data file containes no more than 80 characters
+    31.    --   Each line in data file contains no more than 10,000 nucleotide codes
+    32.
+    33.    -- Types and subtypes
+    34.    subtype File_Name        is String (1 .. 80);           -- Name of data file
+    35.    subtype Name_Length      is Integer  range 0 .. 80;     -- Last good character
+    36.    subtype Nucleotide_Range is Positive range 1 .. 10_000; -- Maximum range of nucleotide pattern
+    37.
+    38.    -- Enumeration types
+    39.    type Nucleotide is (A, C, G, T);
+    40.
+    41.    -- Unconstrained array types
+    42.    type Nucleotide_Array is array (Integer range <>) of Nucleotide;
+    43.
+    44.    -- Constrained array types
+    45.    subtype Pattern_Array is Nucleotide_Array (Nucleotide_Range);
+    46.
+    47.    -- Instantiations of I/O packages
+    48.    package Nucleotide_IO is new Ada.Text_IO.Enumeration_IO (Enum => Nucleotide);
+    49.
+    50.    -------------------------------------------------------------------------------
+    51.
+    52.    function Count_Matches (Pattern   : in Nucleotide_Array;
+    53.                            To_Search : in Nucleotide_Array) return Natural is
+    54.
+    55.    -- This function counts the number of matches found between two arrays
+    56.    --
+    57.    -- Preconditions  : None
+    58.    --
+    59.    -- Postconditions : Number of matches is returned
+    60.
+    61.       -- Variables
+    62.       Matches_Found : Natural;
+    63.
+    64.    begin   -- Count_Matches
+    65.
+    66.       if Pattern'Length > To_Search'Length then
+    67.          return 0;
+    68.       else
+    69.
+    70.          Matches_Found := 0;   -- Initialize count
+    71.
+    72.          -- Loop finds number of matches between two arrays
+    73.          -- Each iteration, checks one section
+    74.          Find_Matches_Loop :
+    75.          for Index in To_Search'First .. To_Search'Last - Pattern'Last + 1 loop
+    76.             if To_Search (Index .. Index + Pattern'Length - 1) = Pattern then
+    77.                Matches_Found := Matches_Found + 1;
+    78.             end if;
+    79.          end loop Find_Matches_Loop;
+    80.
+    81.          return Matches_Found;
+    82.
+    83.       end if;
+    84.
+    85.    end Count_Matches;
+    86.
+    87.    -------------------------------------------------------------------------------
+    88.
+    89.    procedure Get_Pattern (File : in     Ada.Text_IO.File_Type;
+    90.                           Item :    out Nucleotide_Array;
+    91.                           Last :    out Natural) is
+    92.
+    93.    -- This procedure gets a valid nucleotide pattern from the user or file
+    94.    --
+    95.    -- Preconditions  : None
+    96.    --
+    97.    -- Postconditions : Valid pattern and location of last good value is passed back
+    98.
+    99.       -- Variables
+   100.       Line_Input : String (Nucleotide_Range);   -- Raw nucleotide input
+   101.       Length     : Natural;                     -- Last good character of raw nucleotide input
+   102.
+   103.    begin   -- Get_Pattern
+   104.
+   105.       Last := 0;   -- Initialize last valid nucleotide in array
+   106.
+   107.       Ada.Text_IO.Get_Line (File => File,
+   108.                             Item => Line_Input,
+   109.                             Last => Length);
+   110.
+   111.       -- Loop converts line of characters into valid nucleotide codes
+   112.       -- Each iteration, converts one character
+   113.       for Index in Line_Input'First .. Length loop
+   114.          if Line_Input (Index) = 'a' or Line_Input (Index) = 'A' then
+   115.             Last := Last + 1;
+   116.             Item (Last) := A;
+   117.          elsif Line_Input (Index) = 'c' or Line_Input (Index) = 'C' then
+   118.             Last := Last + 1;
+   119.             Item (Last) := C;
+   120.          elsif Line_Input (Index) = 'g' or Line_Input (Index) = 'G' then
+   121.             Last := Last + 1;
+   122.             Item (Last) := G;
+   123.          elsif Line_Input (Index) = 't' or Line_Input (Index) = 'T' then
+   124.             Last := Last + 1;
+   125.             Item (Last) := T;
+   126.          end if;
+   127.       end loop;
+   128.
+   129.    end Get_Pattern;
+   130.
+   131.    -------------------------------------------------------------------------------
+   132.
+   133.    procedure Display_Results (Pattern : in Nucleotide_Array;
+   134.                               Lines   : in Natural;
+   135.                               Found   : in Natural) is
+   136.
+   137.    -- This procedure displays results of search
+   138.    --
+   139.    -- Preconditions  : None
+   140.    --
+   141.    -- Postconditions : Results are printed onscreen
+   142.
+   143.    begin   -- Display_Results
+   144.
+   145.       Ada.Text_IO.New_Line (Spacing => 3);
+   146.       Ada.Integer_Text_IO.Put (Item  => Integer (Lines),
+   147.                                Width => 1);
+   148.       Ada.Text_IO.Put (" lines processed.");
+   149.       Ada.Text_IO.New_Line;
+   150.       Ada.Text_IO.Put ("The pattern ");
+   151.
+   152.       -- This loop displays patterh
+   153.       -- Each iteration, displays one element
+   154.       for Index in Pattern'Range loop
+   155.          Nucleotide_IO.Put (Pattern (Index));
+   156.       end loop;
+   157.
+   158.       Ada.Text_IO.Put (" was found ");
+   159.       Ada.Integer_Text_IO.Put (Item  => Integer (Found),
+   160.                                Width => 1);
+   161.       Ada.Text_IO.Put (" times.");
+   162.
+   163.    end Display_Results;
+   164.
+   165.    -------------------------------------------------------------------------------
+   166.
+   167.    procedure Search_File (File    : in     Ada.Text_IO.File_Type;
+   168.                           Pattern : in     Nucleotide_Array;
+   169.                           Lines   :    out Natural;
+   170.                           Found   :    out Natural) is
+   171.
+   172.    -- This procedure searches the file for a given pattern of nucleotides
+   173.    --
+   174.    -- Preconditions  : None
+   175.    --
+   176.    -- Postconditions : Number of lines searched and times the pattern is found is passed out
+   177.
+   178.       -- Variables
+   179.       Nucleotide_Line        : Pattern_Array;
+   180.       Nucleotide_Line_Length : Natural;
+   181.
+   182.    begin   -- Search_File
+   183.
+   184.       Lines := 0;   -- Initialize line count
+   185.       Found := 0;   -- Initialize found count
+   186.
+   187.       Count_Matches_Loop :
+   188.       loop
+   189.          exit Count_Matches_Loop when Ada.Text_IO.End_Of_File (File => File);
+   190.          Get_Pattern (File => File,
+   191.                       Item => Nucleotide_Line,
+   192.                       Last => Nucleotide_Line_Length);
+   193.          if Nucleotide_Line_Length > 0 then
+   194.             Lines := Lines + 1;
+   195.          end if;
+   196.          Found := Found + Count_Matches (Pattern   => Pattern,
+   197.                                          To_Search => Nucleotide_Line (1 .. Nucleotide_Line_Length));
+   198.       end loop Count_Matches_Loop;
+   199.
+   200.    end Search_File;
+   201.
+   202.    -------------------------------------------------------------------------------
+   203.
+   204.    procedure Prepare_Valid_File (Nucleotide_File : in out Ada.Text_IO.File_Type) is
+   205.
+   206.    -- This procedure prepares an existing file defined by user
+   207.    --
+   208.    -- Preconditions  : None
+   209.    --
+   210.    -- Postconditions : Prepared data file is passed back
+   211.
+   212.       -- Variables
+   213.       Nucleotide_File_Name : File_Name;   -- Name of nucleotide file
+   214.       Length               : Name_Length; -- Last good character
+   215.
+   216.    begin   -- Prepare_Valid_File
+   217.
+   218.       -- Loop gets valid file
+   219.       -- Each iteration, checks for valid file
+   220.       Get_Valid_File :
+   221.       loop
+   222.
+   223.          Valid_File_Block :
+   224.          begin
+   225.
+   226.             -- Get File Name
+   227.             Ada.Text_IO.Put_Line ("Please enter the name of the file of nucleotides");
+   228.             Ada.Text_IO.Get_Line (Item => Nucleotide_File_Name,
+   229.                                   Last => Length);
+   230.
+   231.             -- Attempt to open file
+   232.             Ada.Text_IO.Open (File => Nucleotide_File,
+   233.                               Mode => Ada.Text_IO.In_File,
+   234.                               Name => Nucleotide_File_Name (1 .. Length));
+   235.
+   236.             exit Get_Valid_File;   -- Exit if no errors
+   237.
+   238.          exception
+   239.             when Ada.IO_Exceptions.Name_Error =>
+   240.                Ada.Text_IO.Put ("Cannot find a file called """);
+   241.                Ada.Text_IO.Put (Nucleotide_File_Name (1 .. Length));
+   242.                Ada.Text_IO.Put (""", please try again");
+   243.                Ada.Text_IO.New_Line (Spacing => 2);
+   244.
+   245.          end Valid_File_Block;
+   246.
+   247.       end loop Get_Valid_File;
+   248.
+   249.    end Prepare_Valid_File;
+   250.
+   251. -------------------------------------------------------------------------------
+   252.
+   253.    -- Variables
+   254.    Nucleotide_File : Ada.Text_IO.File_Type;   -- File containing nucleotides
+   255.    Pattern         : Pattern_Array;           -- User defined nucleotide pattern
+   256.    Pattern_Length  : Natural;                 -- Last good value of user defined nucleotide pattern
+   257.    Total_Lines     : Natural;                 -- Total lines processed in file
+   258.    Found           : Natural;                 -- Total times pattern is found in file
+   259.
+   260. begin   -- Assign11
+   261.
+   262.    -- Prepare Valid File
+   263.    Prepare_Valid_File (Nucleotide_File);
+   264.
+   265.    -- Get Valid Nucleotide Pattern
+   266.    Ada.Text_IO.New_Line;
+   267.
+   268.    -- Loop gets a valid nucleotide pattern
+   269.    -- Each iteration, checks for valid pattern
+   270.    Valid_Pattern_Loop :
+   271.    loop
+   272.       Ada.Text_IO.Put_Line ("Please enter a pattern of nucleotides on a single line");
+   273.       Get_Pattern (File => Ada.Text_IO.Standard_Input,
+   274.                    Item => Pattern,
+   275.                    Last => Pattern_Length);
+   276.       exit Valid_Pattern_Loop when Pattern_Length > 0;
+   277.       Ada.Text_IO.Put_Line ("You must enter at least one valid nucleotide");
+   278.       Ada.Text_IO.New_Line;
+   279.    end loop Valid_Pattern_Loop;
+   280.
+   281.    -- Search File for Pattern
+   282.    Search_File (File    => Nucleotide_File,
+   283.                 Pattern => Pattern (1 .. Pattern_Length),
+   284.                 Lines   => Total_Lines,
+   285.                 Found   => Found);
+   286.
+   287.    -- Display results
+   288.    Display_Results (Pattern => Pattern (1 .. Pattern_Length),
+   289.                     Lines   => Total_Lines,
+   290.                     Found   => Found);
+   291.
+   292. end Assign11;
+   293.    
+
+ 293 lines: No errors

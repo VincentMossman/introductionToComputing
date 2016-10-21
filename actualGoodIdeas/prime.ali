@@ -1,0 +1,69 @@
+V "GNAT Lib v2013"
+M P W=b
+A -gnatwu
+A -gnat05
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV SPARK
+
+U prime%b		prime.adb		28fb166f NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-inteio.ads		20130417131020 f64b89a4
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tiinio.ads		20130417131022 aa04e5d6
+D a-unccon.ads		20130417131022 f9eb8f06
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D prime.adb		20140105011548 e6dd6a1f
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 13|1r6 2r6 64r10 65r10 66r10 67r10 68r10
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[9|45] 13|1w10 65r14 67r14
+X 8 a-textio.ads
+49K13*Text_IO 471e16 13|2w10 64r14 66r14 68r14
+166U14*New_Line 13|68s22
+187U14*Set_Col 13|66s22
+242U14*Put 13|64s22
+X 9 a-tiinio.ads
+65U14*Put 13|65s30[4|18] 67s30[4|18]
+X 13 prime.adb
+3U11*Prime 3b11 85l5 85t10
+7V13 IsDivisible{boolean} 7b13 7>26 8>26 16l8 16t19 32s23
+7i26 Number{integer} 14r14 32r36
+8i26 Divisor{integer} 14r25 33r36
+20V13 IsPrime{boolean} 20b13 20>22 40l8 40t15 62s10
+20i22 Int{integer} 26r10 26r21 28r13 32r47 33r73 37r29
+22i7 CheckCase{integer} 33r47 33r61 34m13 34r26 37r17
+44i4 Int{integer}
+45i4 Instance{integer} 63m10 63r22 65r35
+61i8 Num{integer} 62r19 67r35
+

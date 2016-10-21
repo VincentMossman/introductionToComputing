@@ -1,0 +1,81 @@
+V "GNAT Lib v2013"
+M P W=b
+A -gnatwu
+A -gnat05
+P ZX
+
+RN
+RV NO_ENUMERATION_MAPS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV SPARK
+
+U fuckyourmom%b		fuckyourmom.adb		1899e7db NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W ada.text_io.enumeration_io%s
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tienau.ads		20130417131022 6a9c157b
+D a-tienio.ads		20130417131022 fc618ae6
+D a-tienio.adb		20130417131022 c9e6b5af
+D a-unccon.ads		20130417131022 f9eb8f06
+D fuckyourmom.adb	20131022231728 20f4120f
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-imenne.ads		20130417131030 8707cbf0
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-valenu.ads		20130417131034 bb1a4295
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 12|1r6 5r23 11r4
+X 7 a-textio.ads
+49K13*Text_IO 471e16 12|1w10 5r27 11r8
+166U14*New_Line 12|11s16
+X 9 a-tienio.ads
+44E9 Enum 12|5r51
+46k21*Enumeration_IO 75e31 12|5r35
+60U14 Put 12|10s11[5]
+X 12 fuckyourmom.adb
+2U11*fuckyourmom 2b11 14l5 14t16
+4E6 Day_Type 4e82 5r59 9r12
+4n19 Monday{4E6}
+4n27 Tuesday{4E6}
+4n36 Wednesday{4E6}
+4n47 Thursday{4E6}
+4n57 Friday{4E6}
+4n65 Saturday{4E6}
+4n75 Sunday{4E6}
+5K9 Day_IO[9|46] 10r4
+9e5 Day{4E6} 10r16
+

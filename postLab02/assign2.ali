@@ -1,0 +1,62 @@
+V "GNAT Lib v2013"
+M P W=b
+A -gnatwu
+A -gnat05
+P ZX
+
+RN
+RV NO_IO
+RV SPARK
+
+U assign2%b		assign2.adb		cbdafb9e NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-unccon.ads		20130417131022 f9eb8f06
+D assign2.adb		20130912042614 f3b70e4a
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 9|10r6 29r4 30r4 31r4 32r4 33r4 34r4 35r4 36r4 37r4 38r4 39r4
+. 40r4 41r4 42r4
+X 7 a-textio.ads
+49K13*Text_IO 471e16 9|10w10 29r8 30r8 31r8 32r8 33r8 34r8 35r8 36r8 37r8
+. 38r8 39r8 40r8 41r8 42r8
+166U14*New_Line 9|30s16 32s16 34s16 36s16 38s16 40s16 42s16
+242U14*Put 9|29s16 31s16 33s16 35s16 37s16 39s16 41s16
+242s19 Item{string} 9|29r21 31r21 33r21 35r21 37r21 39r21 41r21
+X 9 assign2.adb
+12U11*Assign2 12b11 44l5 44t12
+15i4 Line_Length{integer} 16r44 17r44 18r44 19r44 20r44 21r44 22r44
+16a4 Line1{string} 29r29
+17a4 Line2{string} 31r29
+18a4 Line3{string} 33r29
+19a4 Line4{string} 35r29
+20a4 Line5{string} 37r29
+21a4 Line6{string} 39r29
+22a4 Line7{string} 41r29
+

@@ -1,0 +1,137 @@
+with Ada.Text_IO;
+with Ada.IO_Exceptions;
+procedure Assign11 is
+
+   -- Author: Vincent T. Mossman
+   -- Date:   November 2013
+   --
+   -- This program determines number of user defined nucleotide patterns in a
+   --  text file containing nucleotides
+   --
+   -- Input from keyboard
+   --   Name of data file containing the lines of a DNA sequence
+   --   A DNA sequence (pattern) to search for in the file
+   --
+   -- Input from file
+   --   Lines of nucleotides
+   --
+   -- Output to screen
+   --   Prompts
+   --   Error message for missing file
+   --   Error message for no nucleotides in the search pattern
+   --   Number of lines in the data file
+   --   Pattern entered by user
+   --   Number of times pattern is found in the data file
+   --
+   -- Assumptions
+   --   The pattern contains at least one nucldotide code and no more than
+   --    10,000 nucleotide codes
+   --   The name of the data file containes no more than 80 characters
+   --   Each line in data file contains no more than 10,000 nucleotide codes
+
+   -- General types and subtypes
+   subtype File_Name   is String (1 .. 80);           -- Name of data file
+   subtype Name_Length is Integer range 0 .. 80;      -- Last good character
+   subtype Max_Size    is Positive range 1 .. 10_000; -- Max size of nucleotide pattern
+
+   -- Enumeration types
+   type Nucleotide is (A, C, G, T);
+
+   -- Instantiations of I/O packages
+   package Nucleotide_IO is new Ada.Text_IO.Enumeration_IO (Enum => Nucleotide);
+
+   -- Unconstrained array types
+   type Nucleotide_Array is Array (Integer range <>) of Nucleotide;
+
+   -- Constrained array types
+   subtype Nucleotide_Line_Array is Nucleotide_Array (Max_Size);
+   subtype Pattern_Array         is Nucleotide_Array (Max_Size);
+
+   -------------------------------------------------------------------------------
+
+   procedure Get_Pattern (Pattern : out Nucleotide_Array) is
+
+   -- This procedure gets a valid nucleotide pattern from the user
+   --
+   -- Preconditions  : None
+   --
+   -- Postconditions : Valid pattern is passed back
+
+      -- Variables
+      Nucleotide_In : Nucleotide;   -- Nucleotide input by user
+
+
+   -------------------------------------------------------------------------------
+
+   procedure Prepare_Valid_File (Nucleotide_File : in out Ada.Text_IO.File_Type) is
+
+   -- This procedure prepares an existing file defined by user
+   --
+   -- Preconditions  : None
+   --
+   -- Postconditions : Prepared data file is passed back
+
+      -- Variables
+      Nucleotide_File_Name : File_Name;   -- Name of nucleotide file
+      Length               : Name_Length; -- Last good character
+
+   begin   -- Prepare_Valid_File
+
+      -- Loop gets valid file
+      -- Each iteration, checks for valid file
+      Validation_Loop :
+      loop
+
+         Valid_File_Block :
+         begin
+
+            -- Get File Name
+            Ada.Text_IO.Put_Line ("Please enter the name of the file of nucleotides");
+            Ada.Text_IO.Get_Line (Item => Nucleotide_File_Name,
+                                  Last => Length);
+
+            -- Attempt to open file
+            Ada.Text_IO.Open (File => Nucleotide_File,
+                              Mode => Ada.Text_IO.In_File,
+                              Name => Nucleotide_File_Name (1 .. Length));
+
+            exit Validation_Loop;   -- Exit if no errors
+
+         exception
+            when Ada.IO_Exceptions.Name_Error =>
+               Ada.Text_IO.Put ("Cannot find a file called """);
+               Ada.Text_IO.Put (Nucleotide_File_Name (1 .. Length));
+               Ada.Text_IO.Put (""", please try again");
+               Ada.Text_IO.New_Line (Spacing => 2);
+
+         end Valid_File_Block;
+
+      end loop Validation_Loop;
+
+   end Prepare_Valid_File;
+
+-------------------------------------------------------------------------------
+
+   -- Variables
+   Nucleotide_File : Ada.Text_IO.File_Type; -- File containing nucleotides
+   Pattern         : Pattern_Array;         -- User defined nucleotide pattern
+
+begin   -- Assign11
+
+   -- Prepare Valid File
+   Prepare_Valid_File (Nucleotide_File);
+
+   -- Get Valid Nucleotide Pattern
+
+   --loop
+
+      -- Exit when end of file
+      -- Create array for one line of Nucleotides
+      -- Scan array for pattern
+
+   --end loop
+
+   -- Display results
+
+end Assign11;
+   

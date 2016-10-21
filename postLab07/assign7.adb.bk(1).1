@@ -1,0 +1,347 @@
+with Ada.Integer_Text_IO;
+with Ada.Text_IO;
+procedure Assign7 is
+
+   -- Author:   Vincent T. Mossman
+   -- Date:     October 2013
+   --
+   -- Purpose:
+   --   A program to manage the inventory of a nostalgic candy bar distributorship
+   --
+   -- Input (from keyboard):
+   --   Name of file with inventory at beginning of the week
+   --   Name of file containing this week's transactions
+   --   Name of file in which to write this week's closing inventory
+   --
+   -- Input (from data files):
+   --   From beginning inventory file...
+   --      Each of the four lines in the data file contains two pieces of information about each product
+   --         Name of product (a string)                (e.g. Chunky)
+   --         Number of cases of product (an integer)   (e.g. 12)
+   --   From file containing week's transactions...
+   --      Each line contains data for a single transaction
+   --         Transaction type (a string)                   (e.g. SALE)
+   --         Product type (a string)                       (e.g. skyBAR)
+   --         Number of cases sold/purchased (an integer)   (e.g. 4)
+   --
+   -- Output (to screen):
+   --   Prompts
+   --   Neat table displaying inventory at beginning of the week
+   --   Neat table displaying updated inventory
+   --   Total number of sales transactions processed
+   --   Total number of purchase transactions processed
+   --
+   -- Output (to data file):
+   --   Four lines containing two pieces of information about each product
+   --      Name of product (a string)                (e.g. ZagNut)
+   --      Number of cases of product (an integer)   (e.g. 56)
+   --
+   -- Assumptions:
+   --   File name entered by user is valid
+   --   Data in input file is valid
+   --   Sale must never result in negative inventory value
+
+   -- Type definitions
+   type Product_Type is (Chunky, Skybar, Valomilk, Zagnut);   -- Enumeration of candy types
+   type Transaction_Type is (Sale, Purchase, Done);           -- Enumeration of transaction types
+   subtype File_Name_Type is String (1 .. 50);                -- File name subtype
+   subtype File_Name_Length is Integer range 0 .. 50;         -- File name length subtype
+
+   -- Instantiate package for product input and output
+   package Product_Type_IO is new Ada.Text_IO.Enumeration_IO (Enum => Product_Type);
+   package Transaction_Type_IO is new Ada.Text_IO.Enumeration_IO (Enum => Transaction_Type);
+
+   -----------------------------------------------------------------------------------------------
+
+   procedure Update_Transactions (Chunky_Num   : in Natural;      -- Chunky count to write to file
+                                  Skybar_Num   : in Natural;      -- Skybar count to write to file
+                                  Valomilk_Num : in Natural;      -- Valomilk count to write to file
+                                  Zagnut_Num   : in Natural) is   -- Zagnut count to write to file
+
+      -- Variables
+      Data_File         : Ada.Text_IO.File_Type;   -- File containing transaction information
+      File_Name         : File_Name_Type;          -- Name of file
+      Length            : File_Name_Length;        -- Last good character in File_Name
+
+   begin   -- Update_Transactions
+
+      Ada.Text_IO.Put (Item => "Enter the name of the file to write updated inventory to");
+      Ada.Text_IO.New_Line;
+      Ada.Text_IO.Get_Line (Item => File_Name,
+                            Last => Length);
+      Ada.Text_IO.New_Line;
+
+      Ada.Text_IO.Create (File => Data_File,
+                        Mode => Ada.Text_IO.Out_File,
+                        Name => File_Name (1 .. Length));
+
+      Product_Type_IO.Put (File => Data_File,
+                           Item => Chunky);
+      Ada.Text_IO.Set_Col (File => Data_File,
+                           To   => 9);
+      Ada.Integer_Text_IO.Put (File  => Data_File,
+                               Item  => Chunky_Num,
+                               Width => 5);
+      Ada.Text_IO.New_Line (File => Data_File);
+      Product_Type_IO.Put (File => Data_File,
+                           Item => Skybar);
+      Ada.Text_IO.Set_Col (File => Data_File,
+                           To   => 9);
+      Ada.Integer_Text_IO.Put (File  => Data_File,
+                               Item  => Skybar_Num,
+                               Width => 5);
+      Ada.Text_IO.New_Line (File => Data_File);
+      Product_Type_IO.Put (File => Data_File,
+                           Item => Valomilk);
+      Ada.Text_IO.Set_Col (File => Data_File,
+                           To   => 9);
+      Ada.Integer_Text_IO.Put (File  => Data_File,
+                               Item  => Valomilk_Num,
+                               Width => 5);
+      Ada.Text_IO.New_Line (File => Data_File);
+      Product_Type_IO.Put (File => Data_File,
+                           Item => Zagnut);
+      Ada.Text_IO.Set_Col (File => Data_File,
+                           To   => 9);
+      Ada.Integer_Text_IO.Put (File  => Data_File,
+                               Item  => Zagnut_Num,
+                               Width => 5);
+      Ada.Text_IO.New_Line (File => Data_File);
+
+      Ada.Text_IO.Close (File => Data_File);
+
+   end Update_Transactions;
+
+   -----------------------------------------------------------------------------------------------
+
+   procedure Process_Transactions (Chunky_Num     : in out Natural;      -- Updated Chunky count
+                                   Skybar_Num     : in out Natural;      -- Updated Skybar count
+                                   Valomilk_Num   : in out Natural;      -- Updated Valomilk count
+                                   Zagnut_Num     : in out Natural;      -- Updated Zagnut count
+                                   Sale_Total     :    out Natural;      -- Total sale transactions
+                                   Purchase_Total :    out Natural) is   -- Total purchase transactions
+
+      -- Variables
+      Transaction_Value : Integer;                 -- Quantity of sale or purchase
+      Data_File         : Ada.Text_IO.File_Type;   -- File containing transaction information
+      File_Name         : File_Name_Type;          -- Name of file
+      Length            : File_Name_Length;        -- Last good character in File_Name
+      Transaction       : Transaction_Type;        -- Transaction type
+      Product           : Product_Type;            -- Product type
+
+   begin   -- Process_Transactions
+
+      Ada.Text_IO.Put (Item => "Enter the name of the file containing transaction information");
+      Ada.Text_IO.New_Line;
+      Ada.Text_IO.Get_Line (Item => File_Name,
+                            Last => Length);
+      Ada.Text_IO.New_Line;
+
+      Ada.Text_IO.Open (File => Data_File,
+                        Mode => Ada.Text_IO.In_File,
+                        Name => File_Name (1 .. Length));
+
+      -- Initialize loop variables
+      Sale_Total     := 0;
+      Purchase_Total := 0;
+      Process_Transactions :
+      loop
+         Transaction_Type_IO.Get (File => Data_File,
+                                  Item => Transaction);
+         exit Process_Transactions when Transaction = Done;
+         if Transaction = Sale then
+            Sale_Total := Sale_Total + 1;
+            Product_Type_IO.Get (File => Data_File,
+                                 Item => Product);
+            Ada.Integer_Text_IO.Get (File => Data_File,
+                                     Item => Transaction_Value);
+            case Product is
+               when Chunky =>
+                  Chunky_Num := Chunky_Num - Transaction_Value;
+               when Skybar =>
+                  Skybar_Num := Skybar_Num - Transaction_Value;
+               when Valomilk =>
+                  Valomilk_Num := Valomilk_Num - Transaction_Value;
+               when Zagnut =>
+                  Zagnut_Num := Zagnut_Num - Transaction_Value;
+            end case;
+         elsif Transaction = Purchase then
+            Purchase_Total := Purchase_Total + 1;
+            Product_Type_IO.Get (File => Data_File,
+                                 Item => Product);
+            Ada.Integer_Text_IO.Get (File => Data_File,
+                                     Item => Transaction_Value);
+            case Product is
+               when Chunky =>
+                  Chunky_Num := Chunky_Num + Transaction_Value;
+               when Skybar =>
+                  Skybar_Num := Skybar_Num + Transaction_Value;
+               when Valomilk =>
+                  Valomilk_Num := Valomilk_Num + Transaction_Value;
+               when Zagnut =>
+                  Zagnut_Num := Zagnut_Num + Transaction_Value ;
+            end case;
+         end if;
+      end loop Process_Transactions;
+
+      Ada.Text_IO.Close (File => Data_File);
+
+   end Process_Transactions;
+
+   -----------------------------------------------------------------------------------------------
+
+   procedure Display_Inventory (Chunky_Num   : in Natural;      -- Chunky count to be displayed
+                                Skybar_Num   : in Natural;      -- Skybar count to be displayed
+                                Valomilk_Num : in Natural;      -- Valomilk count to be displayed
+                                Zagnut_Num   : in Natural) is   -- Zagnut count to be displayed
+   begin   -- Display_Inventory
+
+      Ada.Text_IO.Set_Col (To => 3);
+      Ada.Text_IO.Put (Item => "Description");
+      Ada.Text_IO.Set_Col (To => 20);
+      Ada.Text_IO.Put (Item => "Value");
+      Ada.Text_IO.Set_Col (To => 3);
+      Ada.Text_IO.Put (Item => "-----------");
+      Ada.Text_IO.Set_Col (To => 20);
+      Ada.Text_IO.Put (Item => "-----");
+      Ada.Text_IO.New_Line;
+      Ada.Text_IO.Put (Item => "Cases of Chunky");
+      Ada.Text_IO.Set_Col (To => 20);
+      Ada.Integer_Text_IO.Put (Item  => Chunky_Num,
+                               Width => 4);
+      Ada.Text_IO.New_Line;
+      Ada.Text_IO.Put (Item => "Cases of Skybar");
+      Ada.Text_IO.Set_Col (To => 20);
+      Ada.Integer_Text_IO.Put (Item  => Skybar_Num,
+                               Width => 4);
+      Ada.Text_IO.New_Line;
+      Ada.Text_IO.Put (Item => "Cases of Valomilk");
+      Ada.Text_IO.Set_Col (To => 20);
+      Ada.Integer_Text_IO.Put (Item  => Valomilk_Num,
+                               Width => 4);
+      Ada.Text_IO.New_Line;
+      Ada.Text_IO.Put (Item => "Cases of Zagnut");
+      Ada.Text_IO.Set_Col (To => 20);
+      Ada.Integer_Text_IO.Put (Item  => Zagnut_Num,
+                               Width => 4);
+      Ada.Text_IO.New_Line (Spacing => 2);
+
+   end Display_Inventory;
+
+   -----------------------------------------------------------------------------------------------
+
+   procedure Process_Initial_Inventory (Chunky_Num   : out Natural;      -- Initial Chunky count
+                                        Skybar_Num   : out Natural;      -- Initial Skybar count
+                                        Valomilk_Num : out Natural;      -- Initial Valomilk count
+                                        Zagnut_Num   : out Natural) is   -- Initial Zagnut count
+
+      -- Variables
+      Data_File  : Ada.Text_IO.File_Type;   -- File containing initial inventory
+      File_Name  : File_Name_Type;          -- Name of file
+      Length     : File_Name_Length;        -- Last good character in File_Name
+      Product    : Product_Type;            -- Product type
+
+   begin   -- Process_Initial_Inventory
+
+      Ada.Text_IO.Put (Item => "Enter the name of the file containing initial inventory");
+      Ada.Text_IO.New_Line;
+      Ada.Text_IO.Get_Line (Item => File_Name,
+                            Last => Length);
+      Ada.Text_IO.New_Line;
+
+      Ada.Text_IO.Open (File => Data_File,
+                        Mode => Ada.Text_IO.In_File,
+                        Name => File_Name (1 .. Length));
+
+      Process_Initial_Inventory :
+      for Count in 1 .. 4 loop
+         Product_Type_IO.Get (File => Data_File,
+                              Item => Product);
+         case Product is
+            when Chunky =>
+               Ada.Integer_Text_IO.Get (File => Data_File,
+                                        Item => Chunky_Num);
+            when Skybar =>
+               Ada.Integer_Text_IO.Get (File => Data_File,
+                                        Item => Skybar_Num);
+            when Valomilk =>
+               Ada.Integer_Text_IO.Get (File => Data_File,
+                                        Item => Valomilk_Num);
+            when Zagnut =>
+               Ada.Integer_Text_IO.Get (File => Data_File,
+                                        Item => Zagnut_Num);
+        end case;
+     end loop Process_Initial_Inventory;
+
+   Ada.Text_IO.Close (File => Data_File);
+
+   end Process_Initial_Inventory;
+
+   -----------------------------------------------------------------------------------------------
+
+   -- Variables
+   Chunky_Num     : Natural;   -- Number of Chunky bars
+   Skybar_Num     : Natural;   -- Number of Skybar bars
+   Valomilk_Num   : Natural;   -- Number of Valomilk bars
+   Zagnut_Num     : Natural;   -- Number of Zagnut bars
+   Sale_Total     : Natural;   -- Total number of sale transactions
+   Purchase_Total : Natural;   -- Total number of purchase transactions
+
+begin   -- Assign7
+
+   -- Process Initial Inventory
+   Process_Initial_Inventory (Chunky_Num   => Chunky_Num,
+                              Skybar_Num   => Skybar_Num,
+                              Valomilk_Num => Valomilk_Num,
+                              Zagnut_Num   => Zagnut_Num);
+
+   Ada.Text_IO.Put (Item => "Initial Inventory:");
+   Ada.Text_IO.New_Line (Spacing => 2);
+
+   -- Display Initial Inventory
+   Display_Inventory (Chunky_Num   => Chunky_Num,
+                      Skybar_Num   => Skybar_Num,
+                      Valomilk_Num => Valomilk_Num,
+                      Zagnut_Num   => Zagnut_Num);
+
+   -- Process Transactions
+   Process_Transactions (Chunky_Num     => Chunky_Num,
+                         Skybar_Num     => Skybar_Num,
+                         Valomilk_Num   => Valomilk_Num,
+                         Zagnut_Num     => Zagnut_Num,
+                         Sale_Total     => Sale_Total,
+                         Purchase_Total => Purchase_Total);
+
+   Ada.Text_IO.Put (Item => "Updated Inventory:");
+   Ada.Text_IO.New_Line (Spacing => 2);
+
+   -- Display Updated Inventory
+   Display_Inventory (Chunky_Num   => Chunky_Num,
+                      Skybar_Num   => Skybar_Num,
+                      Valomilk_Num => Valomilk_Num,
+                      Zagnut_Num   => Zagnut_Num);
+
+   -- Write Updated Inventory
+   Update_Transactions (Chunky_Num   => Chunky_Num,
+                        Skybar_Num   => Skybar_Num,
+                        Valomilk_Num => Valomilk_Num,
+                        Zagnut_Num   => Zagnut_Num);
+
+   Ada.Text_IO.Set_Col (To => 3);
+   Ada.Text_IO.Put (Item => "Transaction Summary");
+   Ada.Text_IO.Set_Col (To => 3);
+   Ada.Text_IO.Put (Item => "-------------------");
+   Ada.Text_IO.New_Line;
+   Ada.Text_IO.Put (Item => "Sale transactions processed:");
+   Ada.Text_IO.Set_Col (To => 33);
+   Ada.Integer_Text_IO.Put (Item  => Sale_Total,
+                            Width => 4);
+   Ada.Text_IO.New_Line;
+   Ada.Text_IO.Put (Item => "Purchase transactions processed:");
+   Ada.Text_IO.Set_Col (To => 33);
+   Ada.Integer_Text_IO.Put (Item =>  Purchase_Total,
+                            Width => 4);
+
+end Assign7;
+
+   

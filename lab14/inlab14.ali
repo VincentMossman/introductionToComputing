@@ -1,0 +1,113 @@
+V "GNAT Lib v2013"
+M P W=b
+A -fstack-check=specific
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -gnatwc
+A -gnatwd
+A -gnatwf
+A -gnatwg
+A -gnatwk
+A -gnatwm
+A -gnatwr
+A -gnatwu
+A -gnatwv
+A -gnatww
+A -gnatwz
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatye
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatyM110
+A -gnatyr
+A -gnatyt
+A -gnatyx
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV NO_DEFAULT_INITIALIZATION
+
+U inlab14%b		inlab14.adb		e8f078b1 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W cards%s		cards.adb		cards.ali
+W cards.card_io%s	cards-card_io.adb	cards-card_io.ali
+W cards.stacks%s	cards-stacks.adb	cards-stacks.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-unccon.ads		20130417131022 f9eb8f06
+D cards.ads		20130426171614 05714428
+D cards-card_io.ads	20131212163026 a21e830c
+D cards-stacks.ads	20130426150726 29bbe957
+D inlab14.adb		20131212164808 5e49a316
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 12|5r6 20r4 23r4 24r4 26r4 28r4 32r7 35r7
+X 7 a-textio.ads
+49K13*Text_IO 471e16 12|5w10 20r8 23r8 24r8 26r8 28r8 32r11 35r11
+166U14*New_Line 12|20s16 24s16 26s16
+169U14*Skip_Line 12|32s19
+242U14*Put 12|28s16 35s19
+263U14*Put_Line 12|23s16
+X 9 cards.ads
+1K9*Cards 36e10 12|1w6 2r10 3r6 4r6 8r14 9r14 10r18 14r4 21r4 25r4 29r4 33r7
+. 36r7 37r17 38r14
+10R9*Playing_Card 14e17 12|2r16 9r20 10r24
+26V13*Same_Value{boolean} 12|37s23
+32V13*Same_Suit{boolean} 12|38s20
+X 10 cards-card_io.ads
+1K15*Card_IO 9e18 12|3w12 29r10 36r13
+3U14*Put 12|36s21
+6U14*Get 12|29s18
+6r19 Card{9|10R9} 12|29r23
+X 11 cards-stacks.ads
+1K15*Stacks 64e17 12|4w12 8r20 14r10 21r10 25r10 33r13
+4R9*Stack 62e17 12|8r27
+15U14*Create 12|14s17
+24U14*Shuffle 12|21s17
+24r23 A_Stack{4R9} 12|21r26
+25i23 Times{positive} 12|22r26
+29U14*Take_Top_Card 12|33s20
+29r29 A_Stack{4R9} 12|33r35
+30r29 A_Card{9|10R9} 12|34r35
+39U14*Display_Stack 12|25s17
+X 12 inlab14.adb
+6U11*Inlab14 6b11 42l5 42t12
+8r4 My_Deck{11|4R9} 14m25 21m37 21r37 25r32 33m46 33r46
+9r4 My_Card{9|10R9} 29m31 37r35 38r31
+10r4 Picked_Card{9|10R9} 34m46 36r26 37r44 38r40
+

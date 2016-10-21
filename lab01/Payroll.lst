@@ -1,0 +1,122 @@
+
+GNAT GPL 2013 (20130314)
+Copyright 1992-2013, Free Software Foundation, Inc.
+
+
+Checking: payroll.adb (source file time stamp: 2013-09-01 23:59:26)
+
+     1. with Ada.Text_IO;
+     2. with Ada.Float_Text_IO;
+     3. with Ada.Integer_Text_IO;
+     4.
+     5. procedure Payroll is
+     6.
+     7.    -- This program computes the wages for each employee and the total payroll
+     8.    -- for the company
+     9.
+    10.    Max_Regular_Hours : constant Float  := 40.0;  -- Maximum normal work hours
+    11.    Overtime_Factor   : constant Float  :=  1.5;  -- Overtime pay rate factor
+    12.    Minimum_Wage      : constant Float  :=  5.75; -- Minimum hourly pay rate
+    13.    Maximum_Wage      : constant Float  := 99.99; -- Maximum hourly pay rate
+    14.    Payroll_File_Name : constant String := "Payfile.txt";
+    15.
+    16.    ------------------------------------------------------------------------------
+    17.    procedure Calc_Pay (Rate   : in Float;    -- Hourly pay
+    18.                        Hours  : in Float;    -- Hours this week
+    19.                        Pay    : out Float) is -- Wages earned
+    20.
+    21.    -- Calc_Pay computes an employee's pay from their pay rate and the hours
+    22.    -- worked this week, taking overtime into account
+    23.
+    24.    begin   -- Procedure Calc_Pay
+    25.       if Hours > Max_Regular_Hours then
+    26.          Pay := Max_Regular_Hours * Rate
+    27.             + (Hours - Max_Regular_Hours) * Overtime_Factor * Rate;
+    28.       else
+    29.          Pay := Hours * Rate;
+    30.       end if;
+    31.    end Calc_Pay;
+    32.
+    33.    ---------------
+    34.    Pay_Rate     : Float   range Minimum_Wage .. Maximum_Wage; -- Hourly pay rate
+    35.    Hours        : Float   range 0.0 .. 80.0;          -- Hours worked
+    36.    Wages        : Float   range 0.0 .. 8_000.00;      -- Wages earned
+    37.    Total        : Float   range 0.0 .. Float'Last;    -- Total payroll
+    38.    Employee_ID  : Integer   range   0 .. 999;           -- Employee ID number
+    39.    Payroll_File : Ada.Text_IO.File_Type; -- Company payroll file
+    40.
+    41. begin   -- Program Payroll
+    42.
+    43.    -- Create the output file
+    44.    Ada.Text_IO.Create (File => Payroll_File,
+    45.                           Name => Payroll_File_Name);
+    46.
+    47.    -- Initialize company total wages
+    48.    Total := 0.0;
+    49.
+    50.    Employee_Loop : -- Repeat for each employee
+    51.       loop
+    52.
+    53.    -- Prompt for and get an employee's number
+    54.          Ada.Text_IO.Put (Item => "Enter employee number: ");
+    55.          Ada.Integer_Text_IO.Get (Item => Employee_ID);
+    56.                                                          -- An employee number of zero
+    57.          exit Employee_Loop when Employee_ID = 0;        -- indicates we are finished and
+    58.                                                          -- can exit the loop
+    59.
+    60.    -- Prompt for and get the employee's pay rate
+    61.          Ada.Text_IO.Put       (Item => "Enter pay rate: ");
+    62.          Ada.Float_Text_IO.Get (Item => Pay_Rate);
+    63.
+    64.    -- Prompt for and get the number of hours the employee worked this week
+    65.          Ada.Text_IO.Put       (Item => "Enter hours worked: ");
+    66.          Ada.Float_Text_IO.Get (Item => Hours);
+    67.
+    68.    -- Determine the employee's wages
+    69.          Calc_Pay (Rate => Pay_Rate,
+    70.             Hours => Hours,
+    71.             Pay => Wages);
+    72.
+    73.    -- Add this employee's wages to the company total
+    74.          Total := Total + Wages;
+    75.
+    76.    -- Put results in the pay file
+    77.          Ada.Integer_Text_IO.Put (File => Payroll_File, Item => Employee_ID);
+    78.          Ada.Float_Text_IO.Put (File => Payroll_File,
+    79.             Item => Pay_Rate,
+    80.             Fore => 6,
+    81.             Aft => 2,
+    82.             Exp => 0);
+    83.          Ada.Float_Text_IO.Put (File => Payroll_File,
+    84.             Item => Hours,
+    85.             Fore => 6,
+    86.             Aft => 1,
+    87.             Exp => 0);
+    88.          Ada.Float_Text_IO.Put (File => Payroll_File,
+    89.             Item => Wages,
+    90.             Fore => 6,
+    91.             Aft => 2,
+    92.             Exp => 0);
+    93.          Ada.Text_IO.New_Line (File => Payroll_File);
+    94.
+    95.       end loop Employee_Loop;
+    96.
+    97.    -- Display the total payroll on the screen
+    98.    Ada.Text_IO.New_Line   (Spacing => 2);
+    99.    Ada.Text_IO.Put   (Item => "Total payroll is $");
+   100.    Ada.Float_Text_IO.Put   (Item => Total,
+   101.          Fore => 1,
+   102.          Aft => 2,
+   103.          Exp => 0);
+   104.
+   105.    Ada.Text_IO.New_Line;
+   106.
+   107.    -- Close the pay file
+   108.    Ada.Text_IO.Close (File => Payroll_File);
+   109.
+   110. end Payroll;
+   111.
+   112.
+   113.
+
+ 113 lines: No errors

@@ -1,0 +1,134 @@
+V "GNAT Lib v2013"
+M P W=b
+A -gnatwu
+A -gnat05
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_ENUMERATION_MAPS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV SPARK
+
+U assign5%b		assign5.adb		cb50cc09 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W ada.text_io.enumeration_io%s
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-flteio.ads		20130417131020 e18a47a0
+D a-inteio.ads		20130417131020 f64b89a4
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tienau.ads		20130417131022 6a9c157b
+D a-tienio.ads		20130417131022 fc618ae6
+D a-tienio.adb		20130417131022 c9e6b5af
+D a-tiflio.ads		20130417131022 56fbda09
+D a-tiinio.ads		20130417131022 aa04e5d6
+D a-unccon.ads		20130417131022 f9eb8f06
+D assign5.adb		20131002223100 e4fcf7d9
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-imenne.ads		20130417131030 8707cbf0
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-valenu.ads		20130417131034 bb1a4295
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 16|1r6 2r6 3r6 28r40 44r4 45r4 60r7 61r7 62r7 65r7 71r10 74r45
+. 75r10 78r45 79r10 94r10 97r45 98r10 101r45 102r10 115r10 118r45 119r10
+. 128r4 129r4 130r4 132r4 133r4 134r4 136r4 137r4 138r4 140r4 141r4 142r4
+. 146r4 147r4 148r4 149r4 153r4 154r4 155r4 156r4 160r4
+X 4 a-flteio.ads
+20K13*Float_Text_IO[13|45] 16|3w10 142r8 149r8 156r8
+X 5 a-inteio.ads
+18K13*Integer_Text_IO[14|45] 16|2w10 45r8 130r8 134r8 138r8
+X 9 a-textio.ads
+49K13*Text_IO 471e16 16|1w10 28r44 44r8 60r11 61r11 62r11 65r11 71r14 74r49
+. 75r14 78r49 79r14 94r14 97r49 98r14 101r49 102r14 115r14 118r49 119r14
+. 128r8 129r8 132r8 133r8 136r8 137r8 140r8 141r8 146r8 147r8 148r8 153r8
+. 154r8 155r8 160r8
+64I9*Count<integer>
+68I12*Positive_Count{64I9}
+73I12*Field{integer}
+80n22*Lower_Case{80E9} 16|74r57 78r57 97r57 101r57 118r57
+166U14*New_Line 16|60s19 62s19 65s19 128s16 132s16 136s16 140s16 147s16 154s16
+166i24 Spacing{68I12} 16|60r29 128r26
+208U14*Put 16|146s16 153s16 160s16
+208e19 Item{character} 16|146r21 153r21 160r21
+242U14*Put 16|44s16 61s19 71s22 75s22 79s22 94s22 98s22 102s22 115s22 119s22
+. 129s16 133s16 137s16 141s16 148s16 155s16
+242s19 Item{string} 16|44r21 61r24 71r27 75r27 79r27 94r27 98r27 102r27 115r27
+. 119r27 129r21 133r21 137r21 141r21 148r21 155r21
+X 11 a-tienio.ads
+44E9 Enum 16|28r68
+46k21*Enumeration_IO 75e31 16|28r52
+52U14 Get 16|63s28[28] 64s28[28]
+52e19 Item{16|25E9} 16|63r33[28] 64r33[28]
+60U14 Put 16|72s31[28] 76s31[28] 95s31[28] 99s31[28] 116s31[28]
+61e7 Item{16|25E9} 16|72r36[28] 76r36[28] 95r36[28] 99r36[28] 116r36[28]
+62i7 Width{9|73I12} 16|73r36[28] 77r36[28] 96r36[28] 100r36[28] 117r36[28]
+63e7 Set{9|80E9} 16|74r36[28] 78r36[28] 97r36[28] 101r36[28] 118r36[28]
+X 13 a-tiflio.ads
+67U14*Put 16|142s22[4|20] 149s22[4|20] 156s22[4|20]
+68f7 Item{float} 16|142r27[4|20] 149r27[4|20] 156r27[4|20]
+69i7 Fore{9|73I12} 16|143r27[4|20] 150r27[4|20] 157r27[4|20]
+70i7 Aft{9|73I12} 16|144r27[4|20] 151r27[4|20] 158r27[4|20]
+71i7 Exp{9|73I12} 16|145r27[4|20] 152r27[4|20] 159r27[4|20]
+X 14 a-tiinio.ads
+55U14*Get 16|45s24[5|18]
+56i7 Item{integer} 16|45r29[5|18]
+65U14*Put 16|130s24[5|18] 134s24[5|18] 138s24[5|18]
+66i7 Item{integer} 16|130r29[5|18] 134r29[5|18] 138r29[5|18]
+67i7 Width{9|73I12} 16|131r29[5|18] 135r29[5|18] 139r29[5|18]
+X 16 assign5.adb
+4U11*assign5 4b11 162l5 162t12
+25E9 RockPaperScissors_Choice 25e60 28r76 31r21 32r21
+25n38 Rock{25E9} 68r55 69r28 85r33 91r31 93r61 108r33
+25n44 Paper{25E9} 68r28 70r58 83r30 91r57 92r31 106r30
+25n51 Scissors{25E9} 69r54 70r28 92r58 93r31
+28K12 RockPaperScissors_IO[11|46] 63r7 64r7 72r10 76r10 95r10 99r10 116r10
+31e4 Player1_Choice{25E9} 63m41 68r11 69r11 70r11 72r45 83r13 85r16 91r14
+. 92r14 93r14 99r45 116r45
+32e4 Player2_Choice{25E9} 64m41 68r38 69r37 70r41 76r45 91r40 92r41 93r44
+. 95r45 106r13 108r16
+33i4 Player1_Win{integer} 47m4 57r40 81m10 81r25 130r38 142r70 149r71 156r74
+34i4 Player2_Win{integer} 48m4 57r69 104m10 104r25 134r38 142r84 149r85 156r88
+35i4 Tie{integer} 49m4 121m10 121r17 138r38
+36i4 Rock_Win{integer} 50m4 86m13 86r25 109m13 109r25 142r51
+37i4 Paper_Win{integer} 51m4 84m13 84r26 107m13 107r26 149r51
+38i4 Scissors_Win{integer} 52m4 88m13 88r29 111m13 111r29 156r51
+39i4 Win_Max{integer} 45m37 57r54 57r83
+55l4 RockPaperScissors_Loop 57r12 125l13 125e35
+

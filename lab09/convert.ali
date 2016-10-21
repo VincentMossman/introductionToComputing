@@ -1,0 +1,141 @@
+V "GNAT Lib v2013"
+M P W=b
+A -fstack-check=specific
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -gnatwc
+A -gnatwd
+A -gnatwf
+A -gnatwg
+A -gnatwk
+A -gnatwm
+A -gnatwr
+A -gnatwu
+A -gnatwv
+A -gnatww
+A -gnatwz
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatye
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatyM110
+A -gnatyr
+A -gnatyt
+A -gnatyx
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV SPARK
+
+U convert%b		convert.adb		5597bfbd NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W system.fat_lflt%s	s-fatlfl.ads		s-fatlfl.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-inteio.ads		20130417131020 f64b89a4
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131020 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-tiflau.ads		20130417131022 c0393f21
+D a-tiflio.ads		20130417131022 56fbda09
+D a-tiflio.adb		20130417131022 fd9b1cfc
+D a-tiinio.ads		20130417131022 aa04e5d6
+D a-unccon.ads		20130417131022 f9eb8f06
+D convert.adb		20131024155330 9bb1c3cd
+D interfac.ads		20130417131026 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D system.ads		20130417131036 5fc8ae56
+D s-crtl.ads		20130417131028 dfcfca61
+D s-exctab.ads		20130417131028 66e51330
+D s-fatgen.ads		20130417131028 9267ca45
+D s-fatlfl.ads		20130417131028 378cba9f
+D s-ficobl.ads		20130417131028 55a71d43
+D s-finmas.ads		20130417131028 b95bb341
+D s-finroo.ads		20130417131028 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131032 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 14|1r6 1r32 2r6 2r32 13r33 114r10
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[12|45] 14|1w10 1r36 114r14
+X 8 a-textio.ads
+49K13*Text_IO 471e16 14|2w10 2r36 13r37
+64I9*Count<integer>
+68I12*Positive_Count{64I9}
+73I12*Field{integer}
+166U14*New_Line 14|70s10 83s7 92s7 100s7 117s10 131s4 133s4 135s4 140s4 142s4
+187U14*Set_Col 14|81s7 85s7 94s7
+187i23 To{68I12} 14|81r16 85r16 94r16
+208U14*Put 14|66s10 98s10
+242U14*Put 14|82s7 116s10 130s4 132s4 139s4
+X 10 a-tiflio.ads
+45k21*Float_IO 88e25 14|13r45
+67U14 Put 14|37s24[13]
+68f7 Item{14|11F9} 14|37r29[13]
+69i7 Fore{8|73I12} 14|38r29[13]
+70i7 Aft{8|73I12} 14|39r29[13]
+71i7 Exp{8|73I12} 14|40r29[13]
+X 12 a-tiinio.ads
+55U14*Get 14|114s30[4|18] 141s4[4|18]
+65U14*Put 14|64s10[4|18] 89s10[4|18]
+66i7 Item{integer} 14|64r15[4|18] 89r15[4|18]
+67i7 Width{8|73I12} 14|65r15[4|18] 90r15[4|18]
+X 14 convert.adb
+3U11*Convert 3b11 152l5 152t12
+8N4 Column_Width 38r37 65r24 81r22 85r22 90r24 94r22 97r25
+10F9 Centigrade<long_float> 16r41 23r38 29r32 35r44 46r46 54r19 104r43 119r15
+. 124r21
+11F9 Fahrenheit<long_float> 13r55 16r60 19r14 30r32
+13K12 Fahrenheit_IO[10|45] 37r10
+16V13 To_Fahrenheit{11F9} 16b13 16>28 20l8 20t21 36s36
+16f28 Degrees{10F9} 19r41
+23U14 Display_Row 23b14 23>27 42l8 42t19 69s10
+23f27 First{10F9} 35r36 69r23
+29f7 Centigrade_Temperature{10F9} 35m10 36r51
+30f7 Fahrenheit_Temperature{11F9} 36m10 37r37
+34i11 Degree{integer} 35r56
+46U14 Display_Table 46b14 46>29 47>29 74l8 74t21 148s4
+46f29 First_Label{10F9} 57r20 148r19
+47i29 Rows{positive} 61r23 149r19
+54f7 Row_Label{10F9} 57m7 64r33 69r32 72m10 72r23
+61i11 Row{integer}
+77U14 Display_Headings 77b14 101l8 101t24 145s4
+88i11 Count{integer} 89r24
+97i11 Count{integer}
+104U14 Get_Decade_Value 104b14 104<32 120l8 120t24 134s4
+104f32 Item{10F9} 119m7
+109i7 Value{integer} 114m35 115r20 115r41 119r27
+124f4 Start{10F9} 134m22 148r34
+125i4 Number_Of_Rows{positive} 141m9 149r34
+

@@ -1,0 +1,80 @@
+V "GNAT Lib v2013"
+A -fstack-check=specific
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -gnatwc
+A -gnatwd
+A -gnatwf
+A -gnatwg
+A -gnatwk
+A -gnatwm
+A -gnatwr
+A -gnatwu
+A -gnatwv
+A -gnatww
+A -gnatwz
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatye
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatyM110
+A -gnatyr
+A -gnatyt
+A -gnatyx
+A -g
+P ZX
+
+RN
+RV SPARK
+
+U cards%b		cards.adb		8fe1dd66 NE OO PK
+
+U cards%s		cards.ads		05714428 EE NE OO PK
+
+D cards.ads		20130426171614 05714428
+D cards.adb		20131212163044 8a90994e
+D system.ads		20130417131036 5fc8ae56
+X 1 cards.ads
+1K9*Cards 36l5 36e10 2|1b14 30l5 30t10
+6E9*Suit_Type 6e56 12r18
+6n24*hearts{6E9}
+6n32*diamonds{6E9}
+6n42*clubs{6E9}
+6n49*spades{6E9}
+7E9*Value_Type 8e47 13r18
+7n24*two{7E9}
+7n29*three{7E9}
+7n36*four{7E9}
+7n42*five{7E9}
+7n48*six{7E9}
+7n53*seven{7E9}
+7n60*eight{7E9}
+7n67*nine{7E9}
+7n73*ten{7E9}
+8n24*jack{7E9}
+8n30*queen{7E9}
+8n37*king{7E9}
+8n43*ace{7E9}
+10R9*Playing_Card 14e17 19r29 20r29 23r29 24r29 26r36 27r36 32r35 33r35 2|3r29
+. 4r29 10r29 11r29 17r36 18r36 24r35 25r35
+12e10*Suit{6E9} 2|27r19 27r32
+13e10*Value{7E9} 2|6r19 6r33 13r19 13r33 20r19 20r33
+19V14*">"{boolean} 19>18 20>18 2|3b14 7l9 7t11
+19r18 Left{10R9} 2|3b18 6r14
+20r18 Right{10R9} 2|4b18 6r27
+23V14*"<"{boolean} 23>18 24>18 2|10b14 14l9 14t11
+23r18 Left{10R9} 2|10b18 13r14
+24r18 Right{10R9} 2|11b18 13r27
+26V13*Same_Value{boolean} 26>25 27>25 2|17b13 21l8 21t18
+26r25 Left{10R9} 2|17b25 20r14
+27r25 Right{10R9} 2|18b25 20r27
+32V13*Same_Suit{boolean} 32>24 33>24 2|24b13 28l8 28t17
+32r24 Left{10R9} 2|24b24 27r14
+33r24 Right{10R9} 2|25b24 27r26
+
